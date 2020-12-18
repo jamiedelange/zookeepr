@@ -1,5 +1,5 @@
-const { animals } = require("./data/animals");
 const express = require("express");
+const { animals } = require("./data/animals");
 const PORT = process.env.PORT || 3001;
 const app = express();
 
@@ -21,19 +21,13 @@ function filterByQuery(query, animalsArray) {
     });
   }
   if (query.diet) {
-    filteredResults = filteredResults.filter(
-      (animal) => animal.diet === query.diet
-    );
+    filteredResults = filteredResults.filter(animal => animal.diet === query.diet);
   }
   if (query.species) {
-    filteredResults = filteredResults.filter(
-      (animal) => animal.species === query.species
-    );
+    filteredResults = filteredResults.filter(animal => animal.species === query.species);
   }
   if (query.name) {
-    filteredResults = filteredResults.filter(
-      (animal) => animal.name === query.name
-    );
+    filteredResults = filteredResults.filter(animal => animal.name === query.name);
   }
   return filteredResults;
 }
@@ -46,6 +40,6 @@ app.get("/api/animals", (req, res) => {
   res.json(results);
 });
 
-app.listen(3001, () => {
+app.listen(PORT, () => {
   console.log(`API server now on port ${PORT}!`);
 });
