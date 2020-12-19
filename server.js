@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const express = require("express");
 const { animals } = require("./data/animals");
-const { validate } = require('@babel/types');
+
 const PORT = process.env.PORT || 3001;
 const app = express();
 
